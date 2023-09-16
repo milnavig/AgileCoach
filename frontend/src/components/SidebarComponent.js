@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
 
-function PanelComponent() {
+function SidebarComponent() {
   return (  
     <Grid 
       container 
@@ -52,4 +52,4 @@ function PanelComponent() {
   );
 }
 
-export default PanelComponent;
+export default SidebarComponent;

@@ -68,20 +68,20 @@ const StyledResponse = styled(Typography)({
   }
 });
 
-function MessageComponent({type}) {
-  return (type === 'request' ?
+function MessageComponent({message}) {
+  return (message.type === 'request' ?
     <Grid item 
       sx={{ 
         alignSelf: 'end',
       }}>
       <StyledRequest>
-        ewewewewweww wewewewew wwew wewewwe wewew ewewewewweww wewewewew wwew wewewwe wewew
+        { message.text }
       </StyledRequest>
     </Grid>
     :
     <Grid item sx={{ alignSelf: 'start' }}>
       <StyledResponse>
-        ewewewewweww wewewewew wwew wewewwe wewew ewewewewweww wewewewew wwew wewewwe wewew
+        { message.text }
       </StyledResponse>
     </Grid>
   );

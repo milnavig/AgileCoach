@@ -3,7 +3,7 @@ import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
-import PanelComponent from './components/PanelComponent';
+import SidebarComponent from './components/SidebarComponent';
 import ChatComponent from './components/ChatComponent';
 
 const theme = createTheme({
@@ -32,7 +32,7 @@ function App() {
           xs={2} 
           md={3}
         >
-          <PanelComponent></PanelComponent>
+          <SidebarComponent></SidebarComponent>
         </Grid>
         <Grid item 
           xs={10} 

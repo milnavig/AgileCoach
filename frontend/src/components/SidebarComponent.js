@@ -1,7 +1,5 @@
-import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
 
 function SidebarComponent() {
@@ -31,7 +29,8 @@ function SidebarComponent() {
         direction='row' 
         justifyContent='center' 
         sx={{
-          paddingTop: '4em'
+          paddingTop: '4em',
+          paddingBottom: '10px',
         }}
       >
         <HandshakeOutlinedIcon sx={{ 

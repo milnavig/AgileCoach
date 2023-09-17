@@ -3,9 +3,12 @@ import { createSlice } from '@reduxjs/toolkit';
 export const chatSlice = createSlice({
   name: 'chat',
   initialState: {
-    value: [{id: '1212', type: 'request', text: 'ewewewewweww wewewewew wwew wewewwe wewew ewewewewweww wewewewew wwew wewewwe wewew'}],
+    value: [],
   },
   reducers: {
+    setHistory: (state, message) => {
+      state.value = message.payload;
+    },
     addMessage: (state, message) => {
       state.value.push(message.payload);
     },
@@ -13,6 +16,6 @@ export const chatSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { addMessage } = chatSlice.actions;
+export const { setHistory, addMessage } = chatSlice.actions;
 
 export default chatSlice.reducer;

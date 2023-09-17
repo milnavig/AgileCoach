@@ -1,13 +1,19 @@
+import { useRef, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
-import TextField from '@mui/material/TextField';
 import MessageComponent from './MessageComponent';
-import NearMeOutlinedIcon from '@mui/icons-material/NearMeOutlined';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 
 function DialogComponent({messages}) {
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    const content = contentRef.current;
+    content.scrollTop = content.scrollHeight;
+  }, [messages]);
+  
   return (
-    <Grid item xs={10} container direction='column' 
+    <Grid item xs={10} container
+      direction='column' 
+      ref={ contentRef }
       sx={{
         paddingRight: '50px',
         paddingLeft: '50px',

@@ -1,6 +1,4 @@
-import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/system';
 
@@ -16,6 +14,7 @@ const StyledRequest = styled(Typography)({
   maxWidth: '450px',
   borderRadius: '25px',
   backgroundColor: sendColor,
+  fontSize: '16px',
   '&:before': {
     content: '""',
     position: 'absolute',
@@ -46,6 +45,7 @@ const StyledResponse = styled(Typography)({
   maxWidth: '450px',
   borderRadius: '25px',
   backgroundColor: receiveColor,
+  fontSize: '16px',
   '&:before': {
     content: '""',
     position: 'absolute',
@@ -79,7 +79,10 @@ function MessageComponent({message}) {
       </StyledRequest>
     </Grid>
     :
-    <Grid item sx={{ alignSelf: 'start' }}>
+    <Grid item 
+      sx={{ 
+        alignSelf: 'start' 
+      }}>
       <StyledResponse>
         { message.text }
       </StyledResponse>

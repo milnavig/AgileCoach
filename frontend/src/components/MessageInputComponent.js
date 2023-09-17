@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
-import MessageComponent from './MessageComponent';
 import NearMeOutlinedIcon from '@mui/icons-material/NearMeOutlined';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 
-function MessageInputComponent({sendMessage}) {
+function MessageInputComponent({sendMessage, isUserTyping}) {
   const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (event) => {
@@ -17,6 +16,13 @@ function MessageInputComponent({sendMessage}) {
     sendMessage(inputValue);
     setInputValue('');
   };
+
+  const keyPress = (event) => {
+    if (event.keyCode == 13) {
+      sendMessage(inputValue);
+      setInputValue('');
+    }
+  }
 
   return (
     <Grid item 
@@ -36,7 +42,7 @@ function MessageInputComponent({sendMessage}) {
           width: '70%'
         }}
       >
-        AgileGPT writing...
+        { isUserTyping ? 'AgileGPT writing...' : '' }
       </Typography>
       <Grid item container 
         direction='row' 
@@ -51,6 +57,7 @@ function MessageInputComponent({sendMessage}) {
             placeholder='Ask me anything that I can help you or your team...'
             value={ inputValue }
             onChange={ handleInputChange }
+            onKeyDown={ keyPress }
             InputProps={{ sx: { 
               borderRadius: '15px',
             }}} 

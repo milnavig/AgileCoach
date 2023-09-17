@@ -39,7 +39,7 @@ export class ChatService {
       messages: [
         {
           "role": "system",
-          "content": "You are a helpful assistant who is proficient in Agile principles. Respond to every user question and give advice based on Agile principles, generate user stories.  Give short answers."
+          "content": "Act like an Agile Coach. Give advice based on Agile principles and help to generate user stories. Give short answers."
         },
         {
           "role": "user",

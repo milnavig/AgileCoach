@@ -39,7 +39,8 @@ function MessageInputComponent({sendMessage, isUserTyping}) {
           fontSize: '1em', 
           padding: '5px 0', 
           color: '#ACADAD', 
-          width: '70%'
+          width: '70%',
+          height: '2em',
         }}
       >
         { isUserTyping ? 'AgileGPT writing...' : '' }
